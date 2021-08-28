@@ -22,10 +22,19 @@ def flipkart():
         with open('output.jl') as f:
             for line in f:
                 data.append(json.loads(line))
+         p = subprocess.check_output(
+            'scrapy runspider amazon.py -a category="{}" -o output.jl'.format(product_name), 
+            shell=True)
+        
+        # print(e.output)
+        #data = []
+        with open('output.jl') as f:
+            for line in f:
+                data.append(json.loads(line))                
         return jsonify(data)
     return "Querry param not passed"
 
-
+"""
 @app.route('/amazon', methods = ['GET'])
 def amazon():
     product_name =  request.args['q']
@@ -44,7 +53,7 @@ def amazon():
                 data.append(json.loads(line))
         return jsonify(data)
     return "Querry param not passed"
-
+"""
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')
