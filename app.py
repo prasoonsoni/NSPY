@@ -22,7 +22,7 @@ def flipkart():
         with open('output.jl') as f:
             for line in f:
                 data.append(json.loads(line))
-         p = subprocess.check_output(
+        p = subprocess.check_output(
             'scrapy runspider amazon.py -a category="{}" -o output.jl'.format(product_name), 
             shell=True)
         
