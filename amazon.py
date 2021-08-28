@@ -16,7 +16,7 @@ class AmazonSpider(scrapy.Spider):
             yield {
                 "shopping_site":"amazon", 
                 "product_name":names[i], 
-                "product_price":prices[i].replace("\u20b9", ""), 
+                "product_price":int(prices[i].replace(",", "")), 
                 "product_image":imgs[i]
             }
 
@@ -31,6 +31,6 @@ class AmazonSpider(scrapy.Spider):
             yield {
                 "shopping_site":"amazon", 
                 "product_name":names[i], 
-                "product_price":prices[i].replace("\u20b9", ""), 
+                "product_price":int(prices[i].replace(",", "")), 
                 "product_image":imgs[i]
             }
