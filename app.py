@@ -6,7 +6,7 @@ import json
 
 app = Flask(__name__)
 
-@app.route('/data', methods = ['GET'])
+@app.route('/flipkart', methods = ['GET'])
 def flipkart():
     product_name =  request.args['q']
 
