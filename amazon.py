@@ -1,6 +1,6 @@
 import scrapy
 
-class AmazonSpider(scrapy.Spider): #Check commit
+class FlipkartSpider(scrapy.Spider):
     name = 'amazon'
     allowed_domains = ['amazon.com']
 
