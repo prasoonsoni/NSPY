@@ -45,8 +45,8 @@ def amazon():
         return jsonify(data)
     return "Querry param not passed"
 
-
-       """ # flipkart
+"""
+ # flipkart
         p = subprocess.check_output(
             'scrapy runspider flipkart.py -a category="{}" -o output.jl'.format(product_name), 
             shell=True)
