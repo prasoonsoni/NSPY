@@ -17,7 +17,16 @@ def flipkart():
         data = []
         with open('output.jl') as f:
             for line in f:
-                data.append(json.loads(line))             
+                data.append(json.loads(line)) 
+                ###################################
+        p = subprocess.check_output(
+            'scrapy runspider amazon.py -a category="{}" -o output.jl'.format(product_name), 
+            shell=True)
+        data = []
+        with open('output.jl') as f:
+            for line in f:
+                data.append(json.loads(line))
+       # return jsonify(data)            
         return jsonify(sorted(data, key = lambda i: i['product_price']))
     return "Querry param not passed"
 
