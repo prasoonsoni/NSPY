@@ -1,6 +1,6 @@
 import scrapy
 
-class FlipkartSpider(scrapy.Spider):
+class AmazonSpider(scrapy.Spider):
     name = 'amazon'
     allowed_domains = ['amazon.com']
 
