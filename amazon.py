@@ -28,10 +28,9 @@ class AmazonSpider(scrapy.Spider):
         print(prices)
         
         for i in range(len(names)):
-            B=yield {
+            yield {
                 "shopping_site":"amazon", 
                 "product_name":names[i], 
                 "product_price":prices[i].replace("\u20b9", ""), 
                 "product_image":imgs[i]
             }
-        return B
