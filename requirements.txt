@@ -1,0 +1,4 @@
+flask 
+gunicorn 
+msgpack-python
+scrapy
