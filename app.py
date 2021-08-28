@@ -6,7 +6,7 @@ import json
 
 app = Flask(__name__)
 
-@app.route('/flipkart', methods = ['GET'])
+@app.route('/data', methods = ['GET'])
 def flipkart():
     product_name =  request.args['q']
 
@@ -31,7 +31,7 @@ def flipkart():
         with open('output.jl') as f:
             for line in f:
                 data.append(json.loads(line))                
-        return jsonify(data)
+        return jsonify(sorted(data, key = lambda i: i['product_price']))
     return "Querry param not passed"
 
 """
