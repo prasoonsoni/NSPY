@@ -13,7 +13,7 @@ class AmazonSpider(scrapy.Spider):
         prices = response.xpath("//span[@class='a-price-whole']/text()").getall()
         imgs = response.xpath("//img[@class='s-image']/@src").getall()
         for i in range(len(names)):
-            A=yield {
+            yield {
                 "shopping_site":"amazon", 
                 "product_name":names[i], 
                 "product_price":prices[i].replace("\u20b9", ""), 
@@ -28,10 +28,9 @@ class AmazonSpider(scrapy.Spider):
         print(prices)
         
         for i in range(len(names)):
-            A=yield {
+            yield {
                 "shopping_site":"amazon", 
                 "product_name":names[i], 
                 "product_price":prices[i].replace("\u20b9", ""), 
                 "product_image":imgs[i]
             }
-        return A
