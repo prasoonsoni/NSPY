@@ -10,7 +10,7 @@ class FlipkartSpider(scrapy.Spider):
 
     def parse(self, response):
         names = response.xpath("//span[@class='a-size-medium a-color-base a-text-normal']/text()").getall()
-        prices = response.xpath("//span[@class='a-price-whole']']/text()").getall()
+        prices = response.xpath("//span[@class='a-price-whole']'/text()").getall()
         imgs = response.xpath("//img[@class='s-image']/@src").getall()
         for i in range(len(names)):
             yield {
