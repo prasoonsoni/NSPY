@@ -14,7 +14,7 @@ class FlipkartSpider(scrapy.Spider):
         imgs = response.xpath("//img[@class='s-image']/@src").getall()
         for i in range(len(names)):
             yield {
-                "shopping_site":"flipkart", 
+                "shopping_site":"amazon", 
                 "product_name":names[i], 
                 "product_price":prices[i].replace("\u20b9", ""), 
                 "product_image":imgs[i]
