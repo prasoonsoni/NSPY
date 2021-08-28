@@ -15,7 +15,7 @@ class FlipkartSpider(scrapy.Spider):
             yield {
                 "shopping_site":"flipkart", 
                 "product_name":names[i], 
-                "product_price":prices[i].replace("\u20b9", ""), 
+                "product_price":int((prices[i].replace("\u20b9", "")).replace(",","")), 
                 "product_image":imgs[i]
             }
 
