@@ -1,6 +1,6 @@
 import scrapy
 from scrapy import settings
-USER_AGENT="Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+USER_AGENT = "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36"
 class AmazonSpider(scrapy.Spider):
     name = 'amazon'
     allowed_domains = ['amazon.com']
